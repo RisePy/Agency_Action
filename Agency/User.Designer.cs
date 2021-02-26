@@ -314,7 +314,9 @@ namespace Agency
             this.имяMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "Имя", true));
             this.имяMaskedTextBox.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.имяMaskedTextBox.Location = new System.Drawing.Point(102, 351);
+            this.имяMaskedTextBox.Mask = "AAAAAAAAAAAAA";
             this.имяMaskedTextBox.Name = "имяMaskedTextBox";
+            this.имяMaskedTextBox.PromptChar = ' ';
             this.имяMaskedTextBox.Size = new System.Drawing.Size(200, 26);
             this.имяMaskedTextBox.TabIndex = 19;
             // 
@@ -324,7 +326,9 @@ namespace Agency
             this.фамилияMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "Фамилия", true));
             this.фамилияMaskedTextBox.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.фамилияMaskedTextBox.Location = new System.Drawing.Point(102, 395);
+            this.фамилияMaskedTextBox.Mask = "AAAAAAAAAAAAA";
             this.фамилияMaskedTextBox.Name = "фамилияMaskedTextBox";
+            this.фамилияMaskedTextBox.PromptChar = ' ';
             this.фамилияMaskedTextBox.Size = new System.Drawing.Size(200, 26);
             this.фамилияMaskedTextBox.TabIndex = 21;
             // 
@@ -439,7 +443,7 @@ namespace Agency
             this.адресTextBox.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.адресTextBox.Location = new System.Drawing.Point(91, 76);
             this.адресTextBox.Name = "адресTextBox";
-            this.адресTextBox.Size = new System.Drawing.Size(136, 26);
+            this.адресTextBox.Size = new System.Drawing.Size(165, 26);
             this.адресTextBox.TabIndex = 12;
             // 
             // телефонMaskedTextBox
@@ -447,8 +451,9 @@ namespace Agency
             this.телефонMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "Телефон", true));
             this.телефонMaskedTextBox.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.телефонMaskedTextBox.Location = new System.Drawing.Point(91, 125);
+            this.телефонMaskedTextBox.Mask = "(999) 000-0000";
             this.телефонMaskedTextBox.Name = "телефонMaskedTextBox";
-            this.телефонMaskedTextBox.Size = new System.Drawing.Size(100, 26);
+            this.телефонMaskedTextBox.Size = new System.Drawing.Size(165, 26);
             this.телефонMaskedTextBox.TabIndex = 14;
             // 
             // companyDataGridView

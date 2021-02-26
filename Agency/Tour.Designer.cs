@@ -490,7 +490,9 @@ namespace Agency
             this.ценаMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tour_infoBindingSource, "Цена", true));
             this.ценаMaskedTextBox.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.ценаMaskedTextBox.Location = new System.Drawing.Point(141, 68);
+            this.ценаMaskedTextBox.Mask = "0000????????";
             this.ценаMaskedTextBox.Name = "ценаMaskedTextBox";
+            this.ценаMaskedTextBox.PromptChar = ' ';
             this.ценаMaskedTextBox.Size = new System.Drawing.Size(121, 26);
             this.ценаMaskedTextBox.TabIndex = 28;
             // 
