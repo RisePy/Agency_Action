@@ -525,7 +525,7 @@ namespace Agency
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
-            this.button8.Location = new System.Drawing.Point(624, 257);
+            this.button8.Location = new System.Drawing.Point(624, 310);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(40, 37);
             this.button8.TabIndex = 24;
