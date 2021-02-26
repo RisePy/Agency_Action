@@ -438,6 +438,7 @@ namespace Agency
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(2, 27);
+            this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1079, 497);
@@ -508,6 +509,9 @@ namespace Agency
             // 
             // tour_infoDataGridView
             // 
+            this.tour_infoDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tour_infoDataGridView.AutoGenerateColumns = false;
             this.tour_infoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tour_infoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -669,6 +673,9 @@ namespace Agency
             // 
             // travel_packageDataGridView
             // 
+            this.travel_packageDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.travel_packageDataGridView.AutoGenerateColumns = false;
             this.travel_packageDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.travel_packageDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

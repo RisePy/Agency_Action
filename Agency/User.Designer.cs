@@ -488,8 +488,9 @@ namespace Agency
             // 
             // button6
             // 
+            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.button6.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.button6.Location = new System.Drawing.Point(41, 348);
+            this.button6.Location = new System.Drawing.Point(208, 293);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(88, 34);
             this.button6.TabIndex = 8;
@@ -499,8 +500,9 @@ namespace Agency
             // 
             // button5
             // 
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.button5.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.button5.Location = new System.Drawing.Point(41, 304);
+            this.button5.Location = new System.Drawing.Point(114, 293);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(88, 34);
             this.button5.TabIndex = 7;
@@ -510,8 +512,9 @@ namespace Agency
             // 
             // button4
             // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.button4.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.button4.Location = new System.Drawing.Point(41, 257);
+            this.button4.Location = new System.Drawing.Point(20, 293);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(88, 34);
             this.button4.TabIndex = 6;

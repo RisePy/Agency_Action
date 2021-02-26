@@ -34,3 +34,15 @@ C:\Users\palki\Desktop\Agency_action-main\Agency\obj\Debug\Agency.csproj.Generat
 C:\Users\palki\Desktop\Agency_action-main\Agency\obj\Debug\Agency.csproj.CoreCompileInputs.cache
 C:\Users\palki\Desktop\Agency_action-main\Agency\obj\Debug\Agency.exe
 C:\Users\palki\Desktop\Agency_action-main\Agency\obj\Debug\Agency.pdb
+E:\Agency_Action\Agency_Action\Agency\bin\Debug\Agency.exe.config
+E:\Agency_Action\Agency_Action\Agency\bin\Debug\Agency.exe
+E:\Agency_Action\Agency_Action\Agency\bin\Debug\Agency.pdb
+E:\Agency_Action\Agency_Action\Agency\obj\Debug\Agency.csprojAssemblyReference.cache
+E:\Agency_Action\Agency_Action\Agency\obj\Debug\Agency.Authorization.resources
+E:\Agency_Action\Agency_Action\Agency\obj\Debug\Agency.Properties.Resources.resources
+E:\Agency_Action\Agency_Action\Agency\obj\Debug\Agency.Tour.resources
+E:\Agency_Action\Agency_Action\Agency\obj\Debug\Agency.User.resources
+E:\Agency_Action\Agency_Action\Agency\obj\Debug\Agency.csproj.GenerateResource.cache
+E:\Agency_Action\Agency_Action\Agency\obj\Debug\Agency.csproj.CoreCompileInputs.cache
+E:\Agency_Action\Agency_Action\Agency\obj\Debug\Agency.exe
+E:\Agency_Action\Agency_Action\Agency\obj\Debug\Agency.pdb
