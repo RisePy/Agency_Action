@@ -642,16 +642,21 @@ namespace Agency
             this.продолжительностьMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.travel_packageBindingSource, "Продолжительность", true));
             this.продолжительностьMaskedTextBox.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.продолжительностьMaskedTextBox.Location = new System.Drawing.Point(165, 50);
+            this.продолжительностьMaskedTextBox.Mask = "00";
             this.продолжительностьMaskedTextBox.Name = "продолжительностьMaskedTextBox";
+            this.продолжительностьMaskedTextBox.PromptChar = ' ';
             this.продолжительностьMaskedTextBox.Size = new System.Drawing.Size(100, 26);
             this.продолжительностьMaskedTextBox.TabIndex = 38;
+            this.продолжительностьMaskedTextBox.ValidatingType = typeof(int);
             // 
             // типMaskedTextBox
             // 
             this.типMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.travel_packageBindingSource, "Тип", true));
             this.типMaskedTextBox.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.типMaskedTextBox.Location = new System.Drawing.Point(107, 95);
+            this.типMaskedTextBox.Mask = "AAAAAAAAAAAAAAAAAA";
             this.типMaskedTextBox.Name = "типMaskedTextBox";
+            this.типMaskedTextBox.PromptChar = ' ';
             this.типMaskedTextBox.Size = new System.Drawing.Size(158, 26);
             this.типMaskedTextBox.TabIndex = 40;
             // 
@@ -660,7 +665,9 @@ namespace Agency
             this.транспортMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.travel_packageBindingSource, "Транспорт", true));
             this.транспортMaskedTextBox.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.транспортMaskedTextBox.Location = new System.Drawing.Point(107, 137);
+            this.транспортMaskedTextBox.Mask = "AAAAAAAAAAA";
             this.транспортMaskedTextBox.Name = "транспортMaskedTextBox";
+            this.транспортMaskedTextBox.PromptChar = ' ';
             this.транспортMaskedTextBox.Size = new System.Drawing.Size(158, 26);
             this.транспортMaskedTextBox.TabIndex = 42;
             // 
@@ -669,7 +676,9 @@ namespace Agency
             this.точка_отправленияMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.travel_packageBindingSource, "Точка отправления", true));
             this.точка_отправленияMaskedTextBox.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.точка_отправленияMaskedTextBox.Location = new System.Drawing.Point(165, 178);
+            this.точка_отправленияMaskedTextBox.Mask = "AAAAAAAAAAAAAAA";
             this.точка_отправленияMaskedTextBox.Name = "точка_отправленияMaskedTextBox";
+            this.точка_отправленияMaskedTextBox.PromptChar = ' ';
             this.точка_отправленияMaskedTextBox.Size = new System.Drawing.Size(129, 26);
             this.точка_отправленияMaskedTextBox.TabIndex = 44;
             // 
@@ -772,7 +781,9 @@ namespace Agency
             this.странаMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.locationBindingSource, "Страна", true));
             this.странаMaskedTextBox.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.странаMaskedTextBox.Location = new System.Drawing.Point(87, 98);
+            this.странаMaskedTextBox.Mask = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
             this.странаMaskedTextBox.Name = "странаMaskedTextBox";
+            this.странаMaskedTextBox.PromptChar = ' ';
             this.странаMaskedTextBox.Size = new System.Drawing.Size(163, 26);
             this.странаMaskedTextBox.TabIndex = 10;
             // 
@@ -791,7 +802,9 @@ namespace Agency
             this.городMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.locationBindingSource, "Город", true));
             this.городMaskedTextBox.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.городMaskedTextBox.Location = new System.Drawing.Point(87, 145);
+            this.городMaskedTextBox.Mask = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
             this.городMaskedTextBox.Name = "городMaskedTextBox";
+            this.городMaskedTextBox.PromptChar = ' ';
             this.городMaskedTextBox.Size = new System.Drawing.Size(163, 26);
             this.городMaskedTextBox.TabIndex = 12;
             // 
@@ -1214,6 +1227,9 @@ namespace Agency
             // 
             // costDataGridView
             // 
+            this.costDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.costDataGridView.AutoGenerateColumns = false;
             this.costDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.costDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
