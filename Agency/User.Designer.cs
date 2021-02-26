@@ -47,6 +47,7 @@ namespace Agency
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button8 = new System.Windows.Forms.Button();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userDB = new Agency.UserDB();
@@ -59,6 +60,7 @@ namespace Agency
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button7 = new System.Windows.Forms.Button();
             this.название_компанииTextBox = new System.Windows.Forms.TextBox();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.companyDB = new Agency.CompanyDB();
@@ -75,8 +77,6 @@ namespace Agency
             this.tableAdapterManager = new Agency.UserDBTableAdapters.TableAdapterManager();
             this.companyTableAdapter = new Agency.CompanyDBTableAdapters.CompanyTableAdapter();
             this.tableAdapterManager1 = new Agency.CompanyDBTableAdapters.TableAdapterManager();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             idLabel = new System.Windows.Forms.Label();
             имяLabel = new System.Windows.Forms.Label();
             фамилияLabel = new System.Windows.Forms.Label();
@@ -180,6 +180,7 @@ namespace Agency
             this.button1.TabIndex = 1;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -191,6 +192,7 @@ namespace Agency
             this.button2.TabIndex = 2;
             this.button2.Text = "Изменить";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -202,6 +204,7 @@ namespace Agency
             this.button3.TabIndex = 3;
             this.button3.Text = "Удалить";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // menuStrip1
             // 
@@ -272,6 +275,17 @@ namespace Agency
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "User";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.button8.Location = new System.Drawing.Point(624, 310);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(40, 37);
+            this.button8.TabIndex = 24;
+            this.button8.Text = "+";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // idTextBox
             // 
@@ -389,6 +403,17 @@ namespace Agency
             this.tabPage2.Text = "Company";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.button7.Location = new System.Drawing.Point(268, 6);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(40, 37);
+            this.button7.TabIndex = 15;
+            this.button7.Text = "+";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // название_компанииTextBox
             // 
             this.название_компанииTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "Название компании", true));
@@ -470,6 +495,7 @@ namespace Agency
             this.button6.TabIndex = 8;
             this.button6.Text = "Удалить";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -480,6 +506,7 @@ namespace Agency
             this.button5.TabIndex = 7;
             this.button5.Text = "Изменить";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -490,6 +517,7 @@ namespace Agency
             this.button4.TabIndex = 6;
             this.button4.Text = "Добавить";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // usersTableAdapter
             // 
@@ -510,28 +538,6 @@ namespace Agency
             this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager1.CompanyTableAdapter = this.companyTableAdapter;
             this.tableAdapterManager1.UpdateOrder = Agency.CompanyDBTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
-            this.button7.Location = new System.Drawing.Point(268, 6);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(40, 37);
-            this.button7.TabIndex = 15;
-            this.button7.Text = "+";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button8
-            // 
-            this.button8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
-            this.button8.Location = new System.Drawing.Point(624, 310);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(40, 37);
-            this.button8.TabIndex = 24;
-            this.button8.Text = "+";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // User
             // 
