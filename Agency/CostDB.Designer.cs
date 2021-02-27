@@ -281,7 +281,7 @@ namespace Agency {
             
             private global::System.Data.DataColumn columnНазвание_прайс_листа;
             
-            private global::System.Data.DataColumn columnДата;
+            private global::System.Data.DataColumn columnДата_отправления_клиента;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -326,9 +326,9 @@ namespace Agency {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ДатаColumn {
+            public global::System.Data.DataColumn Дата_отправления_клиентаColumn {
                 get {
-                    return this.columnДата;
+                    return this.columnДата_отправления_клиента;
                 }
             }
             
@@ -369,11 +369,11 @@ namespace Agency {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CostRow AddCostRow(string Название_прайс_листа, System.DateTime Дата) {
+            public CostRow AddCostRow(string Название_прайс_листа, System.DateTime Дата_отправления_клиента) {
                 CostRow rowCostRow = ((CostRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Название_прайс_листа,
-                        Дата};
+                        Дата_отправления_клиента};
                 rowCostRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCostRow);
                 return rowCostRow;
@@ -404,7 +404,7 @@ namespace Agency {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnНазвание_прайс_листа = base.Columns["Название прайс листа"];
-                this.columnДата = base.Columns["Дата"];
+                this.columnДата_отправления_клиента = base.Columns["Дата отправления клиента"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -412,8 +412,8 @@ namespace Agency {
             private void InitClass() {
                 this.columnНазвание_прайс_листа = new global::System.Data.DataColumn("Название прайс листа", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnНазвание_прайс_листа);
-                this.columnДата = new global::System.Data.DataColumn("Дата", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnДата);
+                this.columnДата_отправления_клиента = new global::System.Data.DataColumn("Дата отправления клиента", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnДата_отправления_клиента);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnНазвание_прайс_листа}, true));
                 this.columnНазвание_прайс_листа.AllowDBNull = false;
@@ -572,30 +572,30 @@ namespace Agency {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime Дата {
+            public System.DateTime Дата_отправления_клиента {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableCost.ДатаColumn]));
+                        return ((global::System.DateTime)(this[this.tableCost.Дата_отправления_клиентаColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Дата\' в таблице \'Cost\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Дата отправления клиента\' в таблице \'Cost\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCost.ДатаColumn] = value;
+                    this[this.tableCost.Дата_отправления_клиентаColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsДатаNull() {
-                return this.IsNull(this.tableCost.ДатаColumn);
+            public bool IsДата_отправления_клиентаNull() {
+                return this.IsNull(this.tableCost.Дата_отправления_клиентаColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetДатаNull() {
-                this[this.tableCost.ДатаColumn] = global::System.Convert.DBNull;
+            public void SetДата_отправления_клиентаNull() {
+                this[this.tableCost.Дата_отправления_клиентаColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -759,35 +759,35 @@ namespace Agency.CostDBTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Cost";
             tableMapping.ColumnMappings.Add("Название прайс листа", "Название прайс листа");
-            tableMapping.ColumnMappings.Add("Дата", "Дата");
+            tableMapping.ColumnMappings.Add("Дата отправления клиента", "Дата отправления клиента");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Cost] WHERE (([Название прайс листа] = @Original_Название_прай" +
-                "с_листа) AND ((@IsNull_Дата = 1 AND [Дата] IS NULL) OR ([Дата] = @Original_Дата)" +
+                "с_листа) AND ((@IsNull_Дата_отправления_клиента = 1 AND [Дата отправления клиент" +
+                "а] IS NULL) OR ([Дата отправления клиента] = @Original_Дата_отправления_клиента)" +
                 "))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Название_прайс_листа", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Название прайс листа", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Дата", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Дата", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Дата_отправления_клиента", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата отправления клиента", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Дата_отправления_клиента", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата отправления клиента", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Cost] ([Название прайс листа], [Дата]) VALUES (@Название_прайс" +
-                "_листа, @Дата);\r\nSELECT [Название прайс листа], Дата FROM Cost WHERE ([Название " +
-                "прайс листа] = @Название_прайс_листа)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Cost] ([Название прайс листа], [Дата отправления клиента]) VALUES (@Название_прайс_листа, @Дата_отправления_клиента);
+SELECT [Название прайс листа], [Дата отправления клиента] FROM Cost WHERE ([Название прайс листа] = @Название_прайс_листа)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Название_прайс_листа", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Название прайс листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Дата", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Дата_отправления_клиента", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата отправления клиента", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Cost] SET [Название прайс листа] = @Название_прайс_листа, [Дата] = @Дата WHERE (([Название прайс листа] = @Original_Название_прайс_листа) AND ((@IsNull_Дата = 1 AND [Дата] IS NULL) OR ([Дата] = @Original_Дата)));
-SELECT [Название прайс листа], Дата FROM Cost WHERE ([Название прайс листа] = @Название_прайс_листа)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Cost] SET [Название прайс листа] = @Название_прайс_листа, [Дата отправления клиента] = @Дата_отправления_клиента WHERE (([Название прайс листа] = @Original_Название_прайс_листа) AND ((@IsNull_Дата_отправления_клиента = 1 AND [Дата отправления клиента] IS NULL) OR ([Дата отправления клиента] = @Original_Дата_отправления_клиента)));
+SELECT [Название прайс листа], [Дата отправления клиента] FROM Cost WHERE ([Название прайс листа] = @Название_прайс_листа)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Название_прайс_листа", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Название прайс листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Дата", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Дата_отправления_клиента", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата отправления клиента", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Название_прайс_листа", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Название прайс листа", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Дата", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Дата", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Дата_отправления_клиента", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата отправления клиента", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Дата_отправления_клиента", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата отправления клиента", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -803,7 +803,7 @@ SELECT [Название прайс листа], Дата FROM Cost WHERE ([На
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT [Название прайс листа], Дата FROM dbo.Cost";
+            this._commandCollection[0].CommandText = "SELECT [Название прайс листа], [Дата отправления клиента] FROM dbo.Cost";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -864,16 +864,16 @@ SELECT [Название прайс листа], Дата FROM Cost WHERE ([На
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Название_прайс_листа, global::System.Nullable<global::System.DateTime> Original_Дата) {
+        public virtual int Delete(string Original_Название_прайс_листа, global::System.Nullable<global::System.DateTime> Original_Дата_отправления_клиента) {
             if ((Original_Название_прайс_листа == null)) {
                 throw new global::System.ArgumentNullException("Original_Название_прайс_листа");
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_Название_прайс_листа));
             }
-            if ((Original_Дата.HasValue == true)) {
+            if ((Original_Дата_отправления_клиента.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Дата.Value));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Дата_отправления_клиента.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -899,15 +899,15 @@ SELECT [Название прайс листа], Дата FROM Cost WHERE ([На
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Название_прайс_листа, global::System.Nullable<global::System.DateTime> Дата) {
+        public virtual int Insert(string Название_прайс_листа, global::System.Nullable<global::System.DateTime> Дата_отправления_клиента) {
             if ((Название_прайс_листа == null)) {
                 throw new global::System.ArgumentNullException("Название_прайс_листа");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Название_прайс_листа));
             }
-            if ((Дата.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(Дата.Value));
+            if ((Дата_отправления_клиента.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(Дата_отправления_клиента.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -932,15 +932,15 @@ SELECT [Название прайс листа], Дата FROM Cost WHERE ([На
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Название_прайс_листа, global::System.Nullable<global::System.DateTime> Дата, string Original_Название_прайс_листа, global::System.Nullable<global::System.DateTime> Original_Дата) {
+        public virtual int Update(string Название_прайс_листа, global::System.Nullable<global::System.DateTime> Дата_отправления_клиента, string Original_Название_прайс_листа, global::System.Nullable<global::System.DateTime> Original_Дата_отправления_клиента) {
             if ((Название_прайс_листа == null)) {
                 throw new global::System.ArgumentNullException("Название_прайс_листа");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Название_прайс_листа));
             }
-            if ((Дата.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(Дата.Value));
+            if ((Дата_отправления_клиента.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(Дата_отправления_клиента.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -951,9 +951,9 @@ SELECT [Название прайс листа], Дата FROM Cost WHERE ([На
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_Название_прайс_листа));
             }
-            if ((Original_Дата.HasValue == true)) {
+            if ((Original_Дата_отправления_клиента.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Original_Дата.Value));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Original_Дата_отправления_клиента.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
@@ -979,8 +979,8 @@ SELECT [Название прайс листа], Дата FROM Cost WHERE ([На
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> Дата, string Original_Название_прайс_листа, global::System.Nullable<global::System.DateTime> Original_Дата) {
-            return this.Update(Original_Название_прайс_листа, Дата, Original_Название_прайс_листа, Original_Дата);
+        public virtual int Update(global::System.Nullable<global::System.DateTime> Дата_отправления_клиента, string Original_Название_прайс_листа, global::System.Nullable<global::System.DateTime> Original_Дата_отправления_клиента) {
+            return this.Update(Original_Название_прайс_листа, Дата_отправления_клиента, Original_Название_прайс_листа, Original_Дата_отправления_клиента);
         }
     }
     

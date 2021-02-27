@@ -39,8 +39,6 @@ namespace Agency
             System.Windows.Forms.Label название_прайс_листаLabel;
             System.Windows.Forms.Label название_тураLabel2;
             System.Windows.Forms.Label услугиLabel;
-            System.Windows.Forms.Label название_прайс_листаLabel1;
-            System.Windows.Forms.Label дата_отправления_клиентаLabel;
             System.Windows.Forms.Label название_тураLabel;
             System.Windows.Forms.Label ценаLabel;
             System.Windows.Forms.Label доступность_тураLabel;
@@ -49,6 +47,8 @@ namespace Agency
             System.Windows.Forms.Label типLabel;
             System.Windows.Forms.Label транспортLabel;
             System.Windows.Forms.Label точка_отправленияLabel;
+            System.Windows.Forms.Label название_прайс_листаLabel1;
+            System.Windows.Forms.Label дата_отправления_клиентаLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tour));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -126,13 +126,8 @@ namespace Agency
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.название_прайс_листаTextBox1 = new System.Windows.Forms.TextBox();
             this.costBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.costDB = new Agency.CostDB();
-            this.дата_отправления_клиентаDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.costDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button24 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
@@ -153,6 +148,11 @@ namespace Agency
             this.tableAdapterManager5 = new Agency.CostDBTableAdapters.TableAdapterManager();
             this.travel_packageTableAdapter = new Agency.Travel_packageDBTableAdapters.Travel_packageTableAdapter();
             this.tableAdapterManager1 = new Agency.Travel_packageDBTableAdapters.TableAdapterManager();
+            this.costDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.название_прайс_листаTextBox1 = new System.Windows.Forms.TextBox();
+            this.дата_отправления_клиентаDateTimePicker = new System.Windows.Forms.DateTimePicker();
             странаLabel = new System.Windows.Forms.Label();
             городLabel = new System.Windows.Forms.Label();
             название_тураLabel1 = new System.Windows.Forms.Label();
@@ -162,8 +162,6 @@ namespace Agency
             название_прайс_листаLabel = new System.Windows.Forms.Label();
             название_тураLabel2 = new System.Windows.Forms.Label();
             услугиLabel = new System.Windows.Forms.Label();
-            название_прайс_листаLabel1 = new System.Windows.Forms.Label();
-            дата_отправления_клиентаLabel = new System.Windows.Forms.Label();
             название_тураLabel = new System.Windows.Forms.Label();
             ценаLabel = new System.Windows.Forms.Label();
             доступность_тураLabel = new System.Windows.Forms.Label();
@@ -172,6 +170,8 @@ namespace Agency
             типLabel = new System.Windows.Forms.Label();
             транспортLabel = new System.Windows.Forms.Label();
             точка_отправленияLabel = new System.Windows.Forms.Label();
+            название_прайс_листаLabel1 = new System.Windows.Forms.Label();
+            дата_отправления_клиентаLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tour_infoBindingSource)).BeginInit();
@@ -196,8 +196,8 @@ namespace Agency
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.costBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.costDB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.costDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.costDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // странаLabel
@@ -289,26 +289,6 @@ namespace Agency
             услугиLabel.Size = new System.Drawing.Size(58, 19);
             услугиLabel.TabIndex = 30;
             услугиLabel.Text = "Услуги:";
-            // 
-            // название_прайс_листаLabel1
-            // 
-            название_прайс_листаLabel1.AutoSize = true;
-            название_прайс_листаLabel1.Font = new System.Drawing.Font("Times New Roman", 12F);
-            название_прайс_листаLabel1.Location = new System.Drawing.Point(6, 19);
-            название_прайс_листаLabel1.Name = "название_прайс_листаLabel1";
-            название_прайс_листаLabel1.Size = new System.Drawing.Size(162, 19);
-            название_прайс_листаLabel1.TabIndex = 26;
-            название_прайс_листаLabel1.Text = "Название прайс листа:";
-            // 
-            // дата_отправления_клиентаLabel
-            // 
-            дата_отправления_клиентаLabel.AutoSize = true;
-            дата_отправления_клиентаLabel.Font = new System.Drawing.Font("Times New Roman", 12F);
-            дата_отправления_клиентаLabel.Location = new System.Drawing.Point(6, 65);
-            дата_отправления_клиентаLabel.Name = "дата_отправления_клиентаLabel";
-            дата_отправления_клиентаLabel.Size = new System.Drawing.Size(193, 19);
-            дата_отправления_клиентаLabel.TabIndex = 28;
-            дата_отправления_клиентаLabel.Text = "Дата отправления клиента:";
             // 
             // название_тураLabel
             // 
@@ -1197,15 +1177,6 @@ namespace Agency
             this.tabPage3.Text = "Cost";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // название_прайс_листаTextBox1
-            // 
-            this.название_прайс_листаTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.costBindingSource, "Название прайс листа", true));
-            this.название_прайс_листаTextBox1.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.название_прайс_листаTextBox1.Location = new System.Drawing.Point(208, 16);
-            this.название_прайс_листаTextBox1.Name = "название_прайс_листаTextBox1";
-            this.название_прайс_листаTextBox1.Size = new System.Drawing.Size(200, 26);
-            this.название_прайс_листаTextBox1.TabIndex = 27;
-            // 
             // costBindingSource
             // 
             this.costBindingSource.DataMember = "Cost";
@@ -1215,43 +1186,6 @@ namespace Agency
             // 
             this.costDB.DataSetName = "CostDB";
             this.costDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // дата_отправления_клиентаDateTimePicker
-            // 
-            this.дата_отправления_клиентаDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.costBindingSource, "Дата отправления клиента", true));
-            this.дата_отправления_клиентаDateTimePicker.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.дата_отправления_клиентаDateTimePicker.Location = new System.Drawing.Point(208, 61);
-            this.дата_отправления_клиентаDateTimePicker.Name = "дата_отправления_клиентаDateTimePicker";
-            this.дата_отправления_клиентаDateTimePicker.Size = new System.Drawing.Size(200, 26);
-            this.дата_отправления_клиентаDateTimePicker.TabIndex = 29;
-            // 
-            // costDataGridView
-            // 
-            this.costDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.costDataGridView.AutoGenerateColumns = false;
-            this.costDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.costDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18});
-            this.costDataGridView.DataSource = this.costBindingSource;
-            this.costDataGridView.Location = new System.Drawing.Point(588, 0);
-            this.costDataGridView.Name = "costDataGridView";
-            this.costDataGridView.Size = new System.Drawing.Size(477, 461);
-            this.costDataGridView.TabIndex = 26;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "Название прайс листа";
-            this.dataGridViewTextBoxColumn17.HeaderText = "Название прайс листа";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "Дата отправления клиента";
-            this.dataGridViewTextBoxColumn18.HeaderText = "Дата отправления клиента";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
             // 
             // button24
             // 
@@ -1393,6 +1327,72 @@ namespace Agency
             this.tableAdapterManager1.Travel_packageTableAdapter = this.travel_packageTableAdapter;
             this.tableAdapterManager1.UpdateOrder = Agency.Travel_packageDBTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // costDataGridView
+            // 
+            this.costDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.costDataGridView.AutoGenerateColumns = false;
+            this.costDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.costDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18});
+            this.costDataGridView.DataSource = this.costBindingSource;
+            this.costDataGridView.Location = new System.Drawing.Point(588, 3);
+            this.costDataGridView.Name = "costDataGridView";
+            this.costDataGridView.Size = new System.Drawing.Size(480, 465);
+            this.costDataGridView.TabIndex = 26;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "Название прайс листа";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Название прайс листа";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "Дата отправления клиента";
+            this.dataGridViewTextBoxColumn18.HeaderText = "Дата отправления клиента";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            // 
+            // название_прайс_листаLabel1
+            // 
+            название_прайс_листаLabel1.AutoSize = true;
+            название_прайс_листаLabel1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            название_прайс_листаLabel1.Location = new System.Drawing.Point(6, 19);
+            название_прайс_листаLabel1.Name = "название_прайс_листаLabel1";
+            название_прайс_листаLabel1.Size = new System.Drawing.Size(162, 19);
+            название_прайс_листаLabel1.TabIndex = 26;
+            название_прайс_листаLabel1.Text = "Название прайс листа:";
+            // 
+            // название_прайс_листаTextBox1
+            // 
+            this.название_прайс_листаTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.costBindingSource, "Название прайс листа", true));
+            this.название_прайс_листаTextBox1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.название_прайс_листаTextBox1.Location = new System.Drawing.Point(205, 16);
+            this.название_прайс_листаTextBox1.Name = "название_прайс_листаTextBox1";
+            this.название_прайс_листаTextBox1.Size = new System.Drawing.Size(200, 26);
+            this.название_прайс_листаTextBox1.TabIndex = 27;
+            // 
+            // дата_отправления_клиентаLabel
+            // 
+            дата_отправления_клиентаLabel.AutoSize = true;
+            дата_отправления_клиентаLabel.Font = new System.Drawing.Font("Times New Roman", 12F);
+            дата_отправления_клиентаLabel.Location = new System.Drawing.Point(6, 69);
+            дата_отправления_клиентаLabel.Name = "дата_отправления_клиентаLabel";
+            дата_отправления_клиентаLabel.Size = new System.Drawing.Size(193, 19);
+            дата_отправления_клиентаLabel.TabIndex = 28;
+            дата_отправления_клиентаLabel.Text = "Дата отправления клиента:";
+            // 
+            // дата_отправления_клиентаDateTimePicker
+            // 
+            this.дата_отправления_клиентаDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.costBindingSource, "Дата отправления клиента", true));
+            this.дата_отправления_клиентаDateTimePicker.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.дата_отправления_клиентаDateTimePicker.Location = new System.Drawing.Point(205, 65);
+            this.дата_отправления_клиентаDateTimePicker.Name = "дата_отправления_клиентаDateTimePicker";
+            this.дата_отправления_клиентаDateTimePicker.Size = new System.Drawing.Size(200, 26);
+            this.дата_отправления_клиентаDateTimePicker.TabIndex = 29;
+            // 
             // Tour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1437,9 +1437,9 @@ namespace Agency
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.costBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.costDB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.costDataGridView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.costDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1526,11 +1526,6 @@ namespace Agency
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.TextBox название_прайс_листаTextBox1;
-        private System.Windows.Forms.DateTimePicker дата_отправления_клиентаDateTimePicker;
-        private System.Windows.Forms.DataGridView costDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.TextBox название_тураTextBox;
         private System.Windows.Forms.MaskedTextBox ценаMaskedTextBox;
         private System.Windows.Forms.ComboBox доступность_тураComboBox;
@@ -1549,5 +1544,10 @@ namespace Agency
         private System.Windows.Forms.MaskedTextBox типMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox транспортMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox точка_отправленияMaskedTextBox;
+        private System.Windows.Forms.TextBox название_прайс_листаTextBox1;
+        private System.Windows.Forms.DateTimePicker дата_отправления_клиентаDateTimePicker;
+        private System.Windows.Forms.DataGridView costDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
     }
 }

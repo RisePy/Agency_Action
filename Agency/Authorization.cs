@@ -30,11 +30,17 @@ namespace Agency
                 user.Show();
                 this.Hide();
             }
-            if(textBox1.Text == "t" && textBox2.Text == "t")
+            else if(textBox1.Text == "t" && textBox2.Text == "t")
             {
                 Tour tour = new Tour();
                 tour.Show();
                 this.Hide();
+            }
+            else
+            {
+                textBox1.Clear();
+                textBox2.Clear();
+                MessageBox.Show("Указаные не верные данные! Попробуйте ещё раз!","Ошибка авторизации!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
