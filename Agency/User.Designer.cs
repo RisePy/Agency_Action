@@ -55,10 +55,6 @@ namespace Agency
             this.фамилияMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.дата_рожденияDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.usersDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button7 = new System.Windows.Forms.Button();
             this.название_компанииTextBox = new System.Windows.Forms.TextBox();
@@ -67,9 +63,6 @@ namespace Agency
             this.адресTextBox = new System.Windows.Forms.TextBox();
             this.телефонMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.companyDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -77,6 +70,13 @@ namespace Agency
             this.tableAdapterManager = new Agency.UserDBTableAdapters.TableAdapterManager();
             this.companyTableAdapter = new Agency.CompanyDBTableAdapters.CompanyTableAdapter();
             this.tableAdapterManager1 = new Agency.CompanyDBTableAdapters.TableAdapterManager();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             idLabel = new System.Windows.Forms.Label();
             имяLabel = new System.Windows.Forms.Label();
             фамилияLabel = new System.Windows.Forms.Label();
@@ -174,7 +174,7 @@ namespace Agency
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.button1.Location = new System.Drawing.Point(385, 477);
+            this.button1.Location = new System.Drawing.Point(564, 477);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 34);
             this.button1.TabIndex = 1;
@@ -186,7 +186,7 @@ namespace Agency
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.button2.Location = new System.Drawing.Point(472, 477);
+            this.button2.Location = new System.Drawing.Point(651, 477);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 34);
             this.button2.TabIndex = 2;
@@ -198,7 +198,7 @@ namespace Agency
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.button3.Location = new System.Drawing.Point(561, 477);
+            this.button3.Location = new System.Drawing.Point(740, 477);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(88, 34);
             this.button3.TabIndex = 3;
@@ -212,7 +212,7 @@ namespace Agency
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(681, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(860, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -249,7 +249,7 @@ namespace Agency
             this.tabControl1.Location = new System.Drawing.Point(0, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(678, 543);
+            this.tabControl1.Size = new System.Drawing.Size(857, 543);
             this.tabControl1.TabIndex = 13;
             // 
             // tabPage1
@@ -271,15 +271,16 @@ namespace Agency
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(670, 517);
+            this.tabPage1.Size = new System.Drawing.Size(849, 517);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "User";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
-            this.button8.Location = new System.Drawing.Point(624, 310);
+            this.button8.Location = new System.Drawing.Point(803, 310);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(40, 37);
             this.button8.TabIndex = 24;
@@ -357,33 +358,8 @@ namespace Agency
             this.usersDataGridView.DataSource = this.usersBindingSource;
             this.usersDataGridView.Location = new System.Drawing.Point(6, 6);
             this.usersDataGridView.Name = "usersDataGridView";
-            this.usersDataGridView.Size = new System.Drawing.Size(658, 298);
+            this.usersDataGridView.Size = new System.Drawing.Size(837, 298);
             this.usersDataGridView.TabIndex = 16;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Имя";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Имя";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Фамилия";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Фамилия";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Дата рождения";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Дата рождения";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // tabPage2
             // 
@@ -402,7 +378,7 @@ namespace Agency
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(670, 517);
+            this.tabPage2.Size = new System.Drawing.Size(849, 517);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Company";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -470,30 +446,11 @@ namespace Agency
             this.companyDataGridView.DataSource = this.companyBindingSource;
             this.companyDataGridView.Location = new System.Drawing.Point(314, 3);
             this.companyDataGridView.Name = "companyDataGridView";
-            this.companyDataGridView.Size = new System.Drawing.Size(350, 508);
+            this.companyDataGridView.Size = new System.Drawing.Size(529, 508);
             this.companyDataGridView.TabIndex = 9;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Название компании";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Название компании";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Адрес";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Адрес";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Телефон";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Телефон";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // button6
             // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.button6.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.button6.Location = new System.Drawing.Point(208, 293);
             this.button6.Name = "button6";
@@ -505,7 +462,6 @@ namespace Agency
             // 
             // button5
             // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.button5.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.button5.Location = new System.Drawing.Point(114, 293);
             this.button5.Name = "button5";
@@ -517,7 +473,6 @@ namespace Agency
             // 
             // button4
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.button4.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.button4.Location = new System.Drawing.Point(20, 293);
             this.button4.Name = "button4";
@@ -547,17 +502,67 @@ namespace Agency
             this.tableAdapterManager1.CompanyTableAdapter = this.companyTableAdapter;
             this.tableAdapterManager1.UpdateOrder = Agency.CompanyDBTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 45;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Имя";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Имя";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Фамилия";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Фамилия";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Дата рождения";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Дата рождения";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Название компании";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Название компании";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Адрес";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Адрес";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Телефон";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Телефон";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 130;
+            // 
             // User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 569);
+            this.ClientSize = new System.Drawing.Size(860, 569);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(697, 585);
+            this.MinimumSize = new System.Drawing.Size(876, 608);
             this.Name = "User";
             this.Text = "User";
             this.Load += new System.EventHandler(this.User_Load);
@@ -602,10 +607,6 @@ namespace Agency
         private System.Windows.Forms.MaskedTextBox фамилияMaskedTextBox;
         private System.Windows.Forms.DateTimePicker дата_рожденияDateTimePicker;
         private System.Windows.Forms.DataGridView usersDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private CompanyDB companyDB;
         private System.Windows.Forms.BindingSource companyBindingSource;
         private CompanyDBTableAdapters.CompanyTableAdapter companyTableAdapter;
@@ -614,10 +615,14 @@ namespace Agency
         private System.Windows.Forms.TextBox адресTextBox;
         private System.Windows.Forms.MaskedTextBox телефонMaskedTextBox;
         private System.Windows.Forms.DataGridView companyDataGridView;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
     }
 }

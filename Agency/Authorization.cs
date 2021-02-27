@@ -36,6 +36,10 @@ namespace Agency
                 tour.Show();
                 this.Hide();
             }
+            else if (textBox1.Text == "" || textBox2.Text == "")
+            {
+                MessageBox.Show("Одно или несколько полей не заполнены! Попробуйте ещё раз!", "Ошибка авторизации!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
                 textBox1.Clear();

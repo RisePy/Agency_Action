@@ -138,7 +138,7 @@ namespace Agency
         private void button7_Click(object sender, EventArgs e) // Добавить данные в таблицу Location
         {
             
-            if(название_тураTextBox1.Text == "" || странаMaskedTextBox.Text == "" || городMaskedTextBox.Text == "")
+            if(название_тураTextBox1.Text == "" || странаTextBox.Text == "" || городTextBox.Text == "")
             {
                 this.Validate();
                 this.locationBindingSource.RemoveCurrent();
@@ -155,7 +155,7 @@ namespace Agency
         }
         private void button8_Click(object sender, EventArgs e) // Изменить данные из Location
         {
-            if(название_тураTextBox1.Text == "" || странаMaskedTextBox.Text == "" || городMaskedTextBox.Text == "")
+            if(название_тураTextBox1.Text == "" || странаTextBox.Text == "" || городTextBox.Text == "")
             {
                 MessageBox.Show("Одно или несколько значений не указаны!", "Ошибка ввода!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

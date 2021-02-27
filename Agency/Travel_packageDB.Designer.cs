@@ -281,6 +281,8 @@ namespace Agency {
             
             private global::System.Data.DataColumn columnid;
             
+            private global::System.Data.DataColumn columnНазвание_тура;
+            
             private global::System.Data.DataColumn columnПродолжительность;
             
             private global::System.Data.DataColumn columnТип;
@@ -327,6 +329,14 @@ namespace Agency {
             public global::System.Data.DataColumn idColumn {
                 get {
                     return this.columnid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Название_тураColumn {
+                get {
+                    return this.columnНазвание_тура;
                 }
             }
             
@@ -399,10 +409,11 @@ namespace Agency {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Travel_packageRow AddTravel_packageRow(int id, int Продолжительность, string Тип, string Транспорт, string Точка_отправления) {
+            public Travel_packageRow AddTravel_packageRow(string Название_тура, int Продолжительность, string Тип, string Транспорт, string Точка_отправления) {
                 Travel_packageRow rowTravel_packageRow = ((Travel_packageRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id,
+                        null,
+                        Название_тура,
                         Продолжительность,
                         Тип,
                         Транспорт,
@@ -437,6 +448,7 @@ namespace Agency {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
+                this.columnНазвание_тура = base.Columns["Название тура"];
                 this.columnПродолжительность = base.Columns["Продолжительность"];
                 this.columnТип = base.Columns["Тип"];
                 this.columnТранспорт = base.Columns["Транспорт"];
@@ -448,6 +460,8 @@ namespace Agency {
             private void InitClass() {
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
+                this.columnНазвание_тура = new global::System.Data.DataColumn("Название тура", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnНазвание_тура);
                 this.columnПродолжительность = new global::System.Data.DataColumn("Продолжительность", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnПродолжительность);
                 this.columnТип = new global::System.Data.DataColumn("Тип", typeof(string), null, global::System.Data.MappingType.Element);
@@ -458,8 +472,13 @@ namespace Agency {
                 base.Columns.Add(this.columnТочка_отправления);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
                 this.columnid.AllowDBNull = false;
+                this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
+                this.columnНазвание_тура.MaxLength = 50;
                 this.columnТип.MaxLength = 50;
                 this.columnТранспорт.MaxLength = 50;
                 this.columnТочка_отправления.MaxLength = 50;
@@ -616,6 +635,22 @@ namespace Agency {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Название_тура {
+                get {
+                    try {
+                        return ((string)(this[this.tableTravel_package.Название_тураColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Название тура\' в таблице \'Travel_package\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTravel_package.Название_тураColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int Продолжительность {
                 get {
                     try {
@@ -678,6 +713,18 @@ namespace Agency {
                 set {
                     this[this.tableTravel_package.Точка_отправленияColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsНазвание_тураNull() {
+                return this.IsNull(this.tableTravel_package.Название_тураColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetНазвание_тураNull() {
+                this[this.tableTravel_package.Название_тураColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -889,6 +936,7 @@ namespace Agency.Travel_packageDBTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Travel_package";
             tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.ColumnMappings.Add("Название тура", "Название тура");
             tableMapping.ColumnMappings.Add("Продолжительность", "Продолжительность");
             tableMapping.ColumnMappings.Add("Тип", "Тип");
             tableMapping.ColumnMappings.Add("Транспорт", "Транспорт");
@@ -896,9 +944,11 @@ namespace Agency.Travel_packageDBTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Travel_package] WHERE (([id] = @Original_id) AND ((@IsNull_Продолжительность = 1 AND [Продолжительность] IS NULL) OR ([Продолжительность] = @Original_Продолжительность)) AND ((@IsNull_Тип = 1 AND [Тип] IS NULL) OR ([Тип] = @Original_Тип)) AND ((@IsNull_Транспорт = 1 AND [Транспорт] IS NULL) OR ([Транспорт] = @Original_Транспорт)) AND ((@IsNull_Точка_отправления = 1 AND [Точка отправления] IS NULL) OR ([Точка отправления] = @Original_Точка_отправления)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Travel_package] WHERE (([id] = @Original_id) AND ((@IsNull_Название_тура = 1 AND [Название тура] IS NULL) OR ([Название тура] = @Original_Название_тура)) AND ((@IsNull_Продолжительность = 1 AND [Продолжительность] IS NULL) OR ([Продолжительность] = @Original_Продолжительность)) AND ((@IsNull_Тип = 1 AND [Тип] IS NULL) OR ([Тип] = @Original_Тип)) AND ((@IsNull_Транспорт = 1 AND [Транспорт] IS NULL) OR ([Транспорт] = @Original_Транспорт)) AND ((@IsNull_Точка_отправления = 1 AND [Точка отправления] IS NULL) OR ([Точка отправления] = @Original_Точка_отправления)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Название_тура", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Название тура", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Название_тура", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Название тура", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Продолжительность", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Продолжительность", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Продолжительность", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Продолжительность", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Тип", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -909,25 +959,27 @@ namespace Agency.Travel_packageDBTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Точка_отправления", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Точка отправления", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Travel_package] ([id], [Продолжительность], [Тип], [Транспорт], [Точка отправления]) VALUES (@id, @Продолжительность, @Тип, @Транспорт, @Точка_отправления);
-SELECT id, Продолжительность, Тип, Транспорт, [Точка отправления] FROM Travel_package WHERE (id = @id)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Travel_package] ([Название тура], [Продолжительность], [Тип], [Транспорт], [Точка отправления]) VALUES (@Название_тура, @Продолжительность, @Тип, @Транспорт, @Точка_отправления);
+SELECT id, [Название тура], Продолжительность, Тип, Транспорт, [Точка отправления] FROM Travel_package WHERE (id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Название_тура", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Название тура", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Продолжительность", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Продолжительность", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Тип", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Транспорт", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Транспорт", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Точка_отправления", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Точка отправления", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Travel_package] SET [id] = @id, [Продолжительность] = @Продолжительность, [Тип] = @Тип, [Транспорт] = @Транспорт, [Точка отправления] = @Точка_отправления WHERE (([id] = @Original_id) AND ((@IsNull_Продолжительность = 1 AND [Продолжительность] IS NULL) OR ([Продолжительность] = @Original_Продолжительность)) AND ((@IsNull_Тип = 1 AND [Тип] IS NULL) OR ([Тип] = @Original_Тип)) AND ((@IsNull_Транспорт = 1 AND [Транспорт] IS NULL) OR ([Транспорт] = @Original_Транспорт)) AND ((@IsNull_Точка_отправления = 1 AND [Точка отправления] IS NULL) OR ([Точка отправления] = @Original_Точка_отправления)));
-SELECT id, Продолжительность, Тип, Транспорт, [Точка отправления] FROM Travel_package WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Travel_package] SET [Название тура] = @Название_тура, [Продолжительность] = @Продолжительность, [Тип] = @Тип, [Транспорт] = @Транспорт, [Точка отправления] = @Точка_отправления WHERE (([id] = @Original_id) AND ((@IsNull_Название_тура = 1 AND [Название тура] IS NULL) OR ([Название тура] = @Original_Название_тура)) AND ((@IsNull_Продолжительность = 1 AND [Продолжительность] IS NULL) OR ([Продолжительность] = @Original_Продолжительность)) AND ((@IsNull_Тип = 1 AND [Тип] IS NULL) OR ([Тип] = @Original_Тип)) AND ((@IsNull_Транспорт = 1 AND [Транспорт] IS NULL) OR ([Транспорт] = @Original_Транспорт)) AND ((@IsNull_Точка_отправления = 1 AND [Точка отправления] IS NULL) OR ([Точка отправления] = @Original_Точка_отправления)));
+SELECT id, [Название тура], Продолжительность, Тип, Транспорт, [Точка отправления] FROM Travel_package WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Название_тура", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Название тура", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Продолжительность", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Продолжительность", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Тип", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Транспорт", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Транспорт", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Точка_отправления", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Точка отправления", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Название_тура", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Название тура", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Название_тура", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Название тура", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Продолжительность", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Продолжительность", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Продолжительность", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Продолжительность", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Тип", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -936,6 +988,7 @@ SELECT id, Продолжительность, Тип, Транспорт, [То
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Транспорт", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Транспорт", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Точка_отправления", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Точка отправления", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Точка_отправления", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Точка отправления", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -951,8 +1004,8 @@ SELECT id, Продолжительность, Тип, Транспорт, [То
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, Продолжительность, Тип, Транспорт, [Точка отправления] FROM dbo.Travel" +
-                "_package";
+            this._commandCollection[0].CommandText = "SELECT id, [Название тура], Продолжительность, Тип, Транспорт, [Точка отправления" +
+                "] FROM dbo.Travel_package";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1013,39 +1066,47 @@ SELECT id, Продолжительность, Тип, Транспорт, [То
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, global::System.Nullable<int> Original_Продолжительность, string Original_Тип, string Original_Транспорт, string Original_Точка_отправления) {
+        public virtual int Delete(int Original_id, string Original_Название_тура, global::System.Nullable<int> Original_Продолжительность, string Original_Тип, string Original_Транспорт, string Original_Точка_отправления) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
-            if ((Original_Продолжительность.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Продолжительность.Value));
-            }
-            else {
+            if ((Original_Название_тура == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Original_Тип == null)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Название_тура));
+            }
+            if ((Original_Продолжительность.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Продолжительность.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Тип));
-            }
-            if ((Original_Транспорт == null)) {
+            if ((Original_Тип == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Транспорт));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Тип));
             }
-            if ((Original_Точка_отправления == null)) {
+            if ((Original_Транспорт == null)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Точка_отправления));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Транспорт));
+            }
+            if ((Original_Точка_отправления == null)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Точка_отправления));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1067,8 +1128,13 @@ SELECT id, Продолжительность, Тип, Транспорт, [То
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int id, global::System.Nullable<int> Продолжительность, string Тип, string Транспорт, string Точка_отправления) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id));
+        public virtual int Insert(string Название_тура, global::System.Nullable<int> Продолжительность, string Тип, string Транспорт, string Точка_отправления) {
+            if ((Название_тура == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Название_тура));
+            }
             if ((Продолжительность.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Продолжительность.Value));
             }
@@ -1113,8 +1179,13 @@ SELECT id, Продолжительность, Тип, Транспорт, [То
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int id, global::System.Nullable<int> Продолжительность, string Тип, string Транспорт, string Точка_отправления, int Original_id, global::System.Nullable<int> Original_Продолжительность, string Original_Тип, string Original_Транспорт, string Original_Точка_отправления) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(id));
+        public virtual int Update(string Название_тура, global::System.Nullable<int> Продолжительность, string Тип, string Транспорт, string Точка_отправления, int Original_id, string Original_Название_тура, global::System.Nullable<int> Original_Продолжительность, string Original_Тип, string Original_Транспорт, string Original_Точка_отправления, int id) {
+            if ((Название_тура == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Название_тура));
+            }
             if ((Продолжительность.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Продолжительность.Value));
             }
@@ -1140,38 +1211,47 @@ SELECT id, Продолжительность, Тип, Транспорт, [То
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Точка_отправления));
             }
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_id));
-            if ((Original_Продолжительность.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Продолжительность.Value));
-            }
-            else {
+            if ((Original_Название_тура == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Original_Тип == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Название_тура));
+            }
+            if ((Original_Продолжительность.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Продолжительность.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Тип));
-            }
-            if ((Original_Транспорт == null)) {
+            if ((Original_Тип == null)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Транспорт));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Тип));
             }
-            if ((Original_Точка_отправления == null)) {
+            if ((Original_Транспорт == null)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Точка_отправления));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Транспорт));
             }
+            if ((Original_Точка_отправления == null)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Точка_отправления));
+            }
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1192,8 +1272,8 @@ SELECT id, Продолжительность, Тип, Транспорт, [То
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> Продолжительность, string Тип, string Транспорт, string Точка_отправления, int Original_id, global::System.Nullable<int> Original_Продолжительность, string Original_Тип, string Original_Транспорт, string Original_Точка_отправления) {
-            return this.Update(Original_id, Продолжительность, Тип, Транспорт, Точка_отправления, Original_id, Original_Продолжительность, Original_Тип, Original_Транспорт, Original_Точка_отправления);
+        public virtual int Update(string Название_тура, global::System.Nullable<int> Продолжительность, string Тип, string Транспорт, string Точка_отправления, int Original_id, string Original_Название_тура, global::System.Nullable<int> Original_Продолжительность, string Original_Тип, string Original_Транспорт, string Original_Точка_отправления) {
+            return this.Update(Название_тура, Продолжительность, Тип, Транспорт, Точка_отправления, Original_id, Original_Название_тура, Original_Продолжительность, Original_Тип, Original_Транспорт, Original_Точка_отправления, Original_id);
         }
     }
     
