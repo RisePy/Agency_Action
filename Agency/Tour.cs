@@ -131,8 +131,8 @@ namespace Agency
         private void button3_Click(object sender, EventArgs e) // Удалить данные из таблицы Travle package
         {
             this.Validate();
-            this.locationBindingSource.RemoveCurrent();
-            this.tableAdapterManager2.UpdateAll(this.locationDB);
+            this.travel_packageBindingSource.RemoveCurrent();
+            this.tableAdapterManager1.UpdateAll(this.travel_package);
         }
 
         private void button7_Click(object sender, EventArgs e) // Добавить данные в таблицу Location

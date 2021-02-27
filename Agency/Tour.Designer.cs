@@ -30,7 +30,6 @@ namespace Agency
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label название_тураLabel1;
             System.Windows.Forms.Label название_отеляLabel;
             System.Windows.Forms.Label звёздыLabel;
             System.Windows.Forms.Label адресLabel;
@@ -48,8 +47,10 @@ namespace Agency
             System.Windows.Forms.Label типLabel;
             System.Windows.Forms.Label транспортLabel;
             System.Windows.Forms.Label точка_отправленияLabel;
+            System.Windows.Forms.Label idLabel1;
             System.Windows.Forms.Label странаLabel;
             System.Windows.Forms.Label городLabel;
+            System.Windows.Forms.Label название_тураLabel1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tour));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -70,9 +71,16 @@ namespace Agency
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.travel_packageDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.travel_packageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.travel_package = new Agency.Travel_packageDB();
+            this.idTextBox = new System.Windows.Forms.TextBox();
             this.название_тураTextBox3 = new System.Windows.Forms.TextBox();
             this.продолжительностьMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.типMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -80,14 +88,18 @@ namespace Agency
             this.точка_отправленияMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.button20 = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.button21 = new System.Windows.Forms.Button();
+            this.idTextBox1 = new System.Windows.Forms.TextBox();
             this.locationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.locationDB = new Agency.LocationDB();
+            this.странаTextBox = new System.Windows.Forms.TextBox();
+            this.городTextBox = new System.Windows.Forms.TextBox();
             this.название_тураTextBox1 = new System.Windows.Forms.TextBox();
             this.locationDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button21 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -147,16 +159,6 @@ namespace Agency
             this.tableAdapterManager5 = new Agency.CostDBTableAdapters.TableAdapterManager();
             this.travel_packageTableAdapter = new Agency.Travel_packageDBTableAdapters.Travel_packageTableAdapter();
             this.tableAdapterManager1 = new Agency.Travel_packageDBTableAdapters.TableAdapterManager();
-            this.travel_packageDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.странаTextBox = new System.Windows.Forms.TextBox();
-            this.городTextBox = new System.Windows.Forms.TextBox();
-            название_тураLabel1 = new System.Windows.Forms.Label();
             название_отеляLabel = new System.Windows.Forms.Label();
             звёздыLabel = new System.Windows.Forms.Label();
             адресLabel = new System.Windows.Forms.Label();
@@ -174,14 +176,17 @@ namespace Agency
             типLabel = new System.Windows.Forms.Label();
             транспортLabel = new System.Windows.Forms.Label();
             точка_отправленияLabel = new System.Windows.Forms.Label();
+            idLabel1 = new System.Windows.Forms.Label();
             странаLabel = new System.Windows.Forms.Label();
             городLabel = new System.Windows.Forms.Label();
+            название_тураLabel1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tour_infoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tour_infoDB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tour_infoDataGridView)).BeginInit();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.travel_packageDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travel_packageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travel_package)).BeginInit();
             this.tabPage5.SuspendLayout();
@@ -201,18 +206,7 @@ namespace Agency
             ((System.ComponentModel.ISupportInitialize)(this.costDB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.costDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.travel_packageDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // название_тураLabel1
-            // 
-            название_тураLabel1.AutoSize = true;
-            название_тураLabel1.Font = new System.Drawing.Font("Times New Roman", 12F);
-            название_тураLabel1.Location = new System.Drawing.Point(9, 55);
-            название_тураLabel1.Name = "название_тураLabel1";
-            название_тураLabel1.Size = new System.Drawing.Size(109, 19);
-            название_тураLabel1.TabIndex = 13;
-            название_тураLabel1.Text = "Название тура:";
             // 
             // название_отеляLabel
             // 
@@ -383,6 +377,46 @@ namespace Agency
             точка_отправленияLabel.Size = new System.Drawing.Size(141, 19);
             точка_отправленияLabel.TabIndex = 36;
             точка_отправленияLabel.Text = "Точка отправления:";
+            // 
+            // idLabel1
+            // 
+            idLabel1.AutoSize = true;
+            idLabel1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            idLabel1.Location = new System.Drawing.Point(16, 19);
+            idLabel1.Name = "idLabel1";
+            idLabel1.Size = new System.Drawing.Size(23, 19);
+            idLabel1.TabIndex = 26;
+            idLabel1.Text = "id:";
+            // 
+            // странаLabel
+            // 
+            странаLabel.AutoSize = true;
+            странаLabel.Font = new System.Drawing.Font("Times New Roman", 12F);
+            странаLabel.Location = new System.Drawing.Point(13, 63);
+            странаLabel.Name = "странаLabel";
+            странаLabel.Size = new System.Drawing.Size(61, 19);
+            странаLabel.TabIndex = 28;
+            странаLabel.Text = "Страна:";
+            // 
+            // городLabel
+            // 
+            городLabel.AutoSize = true;
+            городLabel.Font = new System.Drawing.Font("Times New Roman", 12F);
+            городLabel.Location = new System.Drawing.Point(13, 107);
+            городLabel.Name = "городLabel";
+            городLabel.Size = new System.Drawing.Size(52, 19);
+            городLabel.TabIndex = 30;
+            городLabel.Text = "Город:";
+            // 
+            // название_тураLabel1
+            // 
+            название_тураLabel1.AutoSize = true;
+            название_тураLabel1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            название_тураLabel1.Location = new System.Drawing.Point(13, 148);
+            название_тураLabel1.Name = "название_тураLabel1";
+            название_тураLabel1.Size = new System.Drawing.Size(109, 19);
+            название_тураLabel1.TabIndex = 32;
+            название_тураLabel1.Text = "Название тура:";
             // 
             // button1
             // 
@@ -611,15 +645,66 @@ namespace Agency
             this.tabPage1.Text = "Travel package";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // idTextBox
+            // travel_packageDataGridView
             // 
-            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.travel_packageBindingSource, "id", true));
-            this.idTextBox.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.idTextBox.Location = new System.Drawing.Point(56, 13);
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.ReadOnly = true;
-            this.idTextBox.Size = new System.Drawing.Size(59, 26);
-            this.idTextBox.TabIndex = 27;
+            this.travel_packageDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.travel_packageDataGridView.AutoGenerateColumns = false;
+            this.travel_packageDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.travel_packageDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20});
+            this.travel_packageDataGridView.DataSource = this.travel_packageBindingSource;
+            this.travel_packageDataGridView.Location = new System.Drawing.Point(380, 3);
+            this.travel_packageDataGridView.Name = "travel_packageDataGridView";
+            this.travel_packageDataGridView.Size = new System.Drawing.Size(688, 465);
+            this.travel_packageDataGridView.TabIndex = 37;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn4.HeaderText = "id";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 45;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Название тура";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Название тура";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Продолжительность";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Продолжительность";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Тип";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Тип";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "Транспорт";
+            this.dataGridViewTextBoxColumn19.HeaderText = "Транспорт";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "Точка отправления";
+            this.dataGridViewTextBoxColumn20.HeaderText = "Точка отправления";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.Width = 120;
             // 
             // travel_packageBindingSource
             // 
@@ -630,6 +715,16 @@ namespace Agency
             // 
             this.travel_package.DataSetName = "Travel_package";
             this.travel_package.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // idTextBox
+            // 
+            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.travel_packageBindingSource, "id", true));
+            this.idTextBox.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.idTextBox.Location = new System.Drawing.Point(56, 13);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.ReadOnly = true;
+            this.idTextBox.Size = new System.Drawing.Size(59, 26);
+            this.idTextBox.TabIndex = 27;
             // 
             // название_тураTextBox3
             // 
@@ -698,14 +793,16 @@ namespace Agency
             // tabPage5
             // 
             this.tabPage5.AutoScroll = true;
-            this.tabPage5.Controls.Add(городLabel);
-            this.tabPage5.Controls.Add(this.городTextBox);
+            this.tabPage5.Controls.Add(idLabel1);
+            this.tabPage5.Controls.Add(this.idTextBox1);
             this.tabPage5.Controls.Add(странаLabel);
             this.tabPage5.Controls.Add(this.странаTextBox);
-            this.tabPage5.Controls.Add(this.button21);
+            this.tabPage5.Controls.Add(городLabel);
+            this.tabPage5.Controls.Add(this.городTextBox);
             this.tabPage5.Controls.Add(название_тураLabel1);
             this.tabPage5.Controls.Add(this.название_тураTextBox1);
             this.tabPage5.Controls.Add(this.locationDataGridView);
+            this.tabPage5.Controls.Add(this.button21);
             this.tabPage5.Controls.Add(this.button9);
             this.tabPage5.Controls.Add(this.button8);
             this.tabPage5.Controls.Add(this.button7);
@@ -717,16 +814,15 @@ namespace Agency
             this.tabPage5.Text = "Location";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // button21
+            // idTextBox1
             // 
-            this.button21.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button21.Location = new System.Drawing.Point(490, 6);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(40, 37);
-            this.button21.TabIndex = 26;
-            this.button21.Text = "+";
-            this.button21.UseVisualStyleBackColor = true;
-            this.button21.Click += new System.EventHandler(this.button21_Click);
+            this.idTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.locationBindingSource, "id", true));
+            this.idTextBox1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.idTextBox1.Location = new System.Drawing.Point(70, 16);
+            this.idTextBox1.Name = "idTextBox1";
+            this.idTextBox1.ReadOnly = true;
+            this.idTextBox1.Size = new System.Drawing.Size(67, 26);
+            this.idTextBox1.TabIndex = 27;
             // 
             // locationBindingSource
             // 
@@ -738,52 +834,83 @@ namespace Agency
             this.locationDB.DataSetName = "LocationDB";
             this.locationDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // странаTextBox
+            // 
+            this.странаTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.locationBindingSource, "Страна", true));
+            this.странаTextBox.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.странаTextBox.Location = new System.Drawing.Point(80, 60);
+            this.странаTextBox.Name = "странаTextBox";
+            this.странаTextBox.Size = new System.Drawing.Size(142, 26);
+            this.странаTextBox.TabIndex = 29;
+            // 
+            // городTextBox
+            // 
+            this.городTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.locationBindingSource, "Город", true));
+            this.городTextBox.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.городTextBox.Location = new System.Drawing.Point(70, 104);
+            this.городTextBox.Name = "городTextBox";
+            this.городTextBox.Size = new System.Drawing.Size(152, 26);
+            this.городTextBox.TabIndex = 31;
+            // 
             // название_тураTextBox1
             // 
             this.название_тураTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.locationBindingSource, "Название тура", true));
             this.название_тураTextBox1.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.название_тураTextBox1.Location = new System.Drawing.Point(127, 52);
+            this.название_тураTextBox1.Location = new System.Drawing.Point(122, 145);
             this.название_тураTextBox1.Name = "название_тураTextBox1";
-            this.название_тураTextBox1.Size = new System.Drawing.Size(124, 26);
-            this.название_тураTextBox1.TabIndex = 14;
+            this.название_тураTextBox1.Size = new System.Drawing.Size(138, 26);
+            this.название_тураTextBox1.TabIndex = 33;
             // 
             // locationDataGridView
             // 
-            this.locationDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.locationDataGridView.AutoGenerateColumns = false;
             this.locationDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.locationDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10});
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11});
             this.locationDataGridView.DataSource = this.locationBindingSource;
-            this.locationDataGridView.Location = new System.Drawing.Point(536, 3);
+            this.locationDataGridView.Location = new System.Drawing.Point(536, 6);
             this.locationDataGridView.Name = "locationDataGridView";
-            this.locationDataGridView.Size = new System.Drawing.Size(532, 462);
-            this.locationDataGridView.TabIndex = 7;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Название тура";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Название тура";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Width = 190;
+            this.locationDataGridView.Size = new System.Drawing.Size(527, 455);
+            this.locationDataGridView.TabIndex = 26;
             // 
             // dataGridViewTextBoxColumn9
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Страна";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Страна";
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn9.HeaderText = "id";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 150;
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "Название тура";
+            this.dataGridViewTextBoxColumn21.HeaderText = "Название тура";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
             // 
             // dataGridViewTextBoxColumn10
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Город";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Город";
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Страна";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Страна";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 145;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Город";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Город";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // button21
+            // 
+            this.button21.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button21.Location = new System.Drawing.Point(490, 6);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(40, 37);
+            this.button21.TabIndex = 26;
+            this.button21.Text = "+";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
             // button9
             // 
@@ -1321,105 +1448,6 @@ namespace Agency
             this.tableAdapterManager1.Travel_packageTableAdapter = this.travel_packageTableAdapter;
             this.tableAdapterManager1.UpdateOrder = Agency.Travel_packageDBTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // travel_packageDataGridView
-            // 
-            this.travel_packageDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.travel_packageDataGridView.AutoGenerateColumns = false;
-            this.travel_packageDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.travel_packageDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20});
-            this.travel_packageDataGridView.DataSource = this.travel_packageBindingSource;
-            this.travel_packageDataGridView.Location = new System.Drawing.Point(380, 3);
-            this.travel_packageDataGridView.Name = "travel_packageDataGridView";
-            this.travel_packageDataGridView.Size = new System.Drawing.Size(688, 465);
-            this.travel_packageDataGridView.TabIndex = 37;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn4.HeaderText = "id";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 45;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Название тура";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Название тура";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 130;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Продолжительность";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Продолжительность";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Тип";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Тип";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "Транспорт";
-            this.dataGridViewTextBoxColumn19.HeaderText = "Транспорт";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "Точка отправления";
-            this.dataGridViewTextBoxColumn20.HeaderText = "Точка отправления";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.Width = 120;
-            // 
-            // странаLabel
-            // 
-            странаLabel.AutoSize = true;
-            странаLabel.Font = new System.Drawing.Font("Times New Roman", 12F);
-            странаLabel.Location = new System.Drawing.Point(10, 111);
-            странаLabel.Name = "странаLabel";
-            странаLabel.Size = new System.Drawing.Size(61, 19);
-            странаLabel.TabIndex = 26;
-            странаLabel.Text = "Страна:";
-            // 
-            // странаTextBox
-            // 
-            this.странаTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.locationBindingSource, "Страна", true));
-            this.странаTextBox.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.странаTextBox.Location = new System.Drawing.Point(77, 108);
-            this.странаTextBox.Name = "странаTextBox";
-            this.странаTextBox.Size = new System.Drawing.Size(174, 26);
-            this.странаTextBox.TabIndex = 27;
-            // 
-            // городLabel
-            // 
-            городLabel.AutoSize = true;
-            городLabel.Font = new System.Drawing.Font("Times New Roman", 12F);
-            городLabel.Location = new System.Drawing.Point(10, 156);
-            городLabel.Name = "городLabel";
-            городLabel.Size = new System.Drawing.Size(52, 19);
-            городLabel.TabIndex = 27;
-            городLabel.Text = "Город:";
-            // 
-            // городTextBox
-            // 
-            this.городTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.locationBindingSource, "Город", true));
-            this.городTextBox.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.городTextBox.Location = new System.Drawing.Point(68, 153);
-            this.городTextBox.Name = "городTextBox";
-            this.городTextBox.Size = new System.Drawing.Size(183, 26);
-            this.городTextBox.TabIndex = 28;
-            // 
             // Tour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1442,6 +1470,7 @@ namespace Agency
             ((System.ComponentModel.ISupportInitialize)(this.tour_infoDataGridView)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.travel_packageDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.travel_packageBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.travel_package)).EndInit();
             this.tabPage5.ResumeLayout(false);
@@ -1466,7 +1495,6 @@ namespace Agency
             ((System.ComponentModel.ISupportInitialize)(this.costDataGridView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.travel_packageDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1508,8 +1536,6 @@ namespace Agency
         private System.Windows.Forms.BindingSource locationBindingSource;
         private LocationDBTableAdapters.LocationTableAdapter locationTableAdapter;
         private LocationDBTableAdapters.TableAdapterManager tableAdapterManager2;
-        private System.Windows.Forms.TextBox название_тураTextBox1;
-        private System.Windows.Forms.DataGridView locationDataGridView;
         private HotelDB hotelDB;
         private System.Windows.Forms.BindingSource hotelBindingSource;
         private HotelDBTableAdapters.HotelTableAdapter hotelTableAdapter;
@@ -1551,9 +1577,6 @@ namespace Agency
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
@@ -1576,7 +1599,14 @@ namespace Agency
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.TextBox городTextBox;
+        private System.Windows.Forms.TextBox idTextBox1;
         private System.Windows.Forms.TextBox странаTextBox;
+        private System.Windows.Forms.TextBox городTextBox;
+        private System.Windows.Forms.TextBox название_тураTextBox1;
+        private System.Windows.Forms.DataGridView locationDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
     }
 }
